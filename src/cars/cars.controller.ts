@@ -17,12 +17,12 @@ export class CarsController {
   constructor(private readonly carsService: CarsService) {}
 
   @Get()
-  getAllCars() {
+  allCars() {
     return this.carsService.findAll();
   }
 
   @Get(':id')
-  getCarById(@Param('id', new ParseUUIDPipe({ version: '4' })) id: string) {
+  carById(@Param('id', new ParseUUIDPipe({ version: '4' })) id: string) {
     return this.carsService.findOneBydId(id);
   }
 
